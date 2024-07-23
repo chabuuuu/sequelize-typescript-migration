@@ -1,0 +1,36 @@
+{
+  "name": "ts-sequelize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node-dev main.ts",
+    "build": "tsc",
+    "migrate:create": "cross-env NAME=$NAME node ./src/database/migrate create --name $NAME --folder src/database/migrations",
+    "migrate:up": "node ./src/database/migrate up",
+    "migrate:down": "node ./src/database/migrate down",
+    "migrate:revert-all": "node ./src/database/migrate down --to 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.11",
+    "@types/validator": "^13.12.0",
+    "cross-env": "^7.0.3",
+    "sequelize-cli": "^6.6.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mariadb": "^3.3.1",
+    "pg": "^8.12.0",
+    "reflect-metadata": "^0.2.2",
+    "sequelize": "^6.37.3",
+    "sequelize-typescript": "^2.1.6",
+    "umzug": "^3.8.1"
+  }
+}
